@@ -6,17 +6,17 @@
 <rect x="1" y="1" width="1198" height="358" rx="29" fill="none" stroke="#171418" stroke-opacity=".09"/>
 <text x="48" y="54" fill="#625b5b" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="650" letter-spacing="1.5">A LONGER STORY THAN THIS ACCOUNT</text>
 <text x="48" y="91" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="24" font-weight="720">Some of the work lives in company repos, client repos or older systems.</text>
-<line x1="90" y1="164" x2="1015" y2="164" stroke="#171418" stroke-opacity=".12" stroke-width="5" stroke-linecap="round"/>
+<line x1="110" y1="164" x2="1015" y2="164" stroke="#171418" stroke-opacity=".12" stroke-width="5" stroke-linecap="round"/>
 <line x1="90" y1="164" x2="1015" y2="164" stroke="url(#brand)" stroke-width="5" stroke-linecap="round" stroke-dasharray="925" stroke-dashoffset="925">
 <animate attributeName="stroke-dashoffset" from="925" to="0" dur="2.4s" fill="freeze"/>
 </line>
-<circle cx="90" cy="164" r="10" fill="#fffdf8" stroke="#f6535f" stroke-width="4">
+<circle cx="110" cy="164" r="10" fill="#fffdf8" stroke="#f6535f" stroke-width="4">
 <animate attributeName="r" values="8;13;8" dur="3.8s" begin="0.00s" repeatCount="indefinite"/>
 </circle>
-<text x="90" y="137" text-anchor="middle" fill="#f6535f" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="760">2000s</text>
-<rect x="-10" y="195" width="200" height="105" rx="18" fill="#fffdf8" stroke="#171418" stroke-opacity=".07"/>
-<text x="8" y="226" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="14" font-weight="700">Web from the ground up</text>
-<text x="8" y="252" fill="#625b5b" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="11">HTML · JavaScript · ActionScript · PHP</text>
+<text x="110" y="137" text-anchor="middle" fill="#f6535f" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="760">2000s</text>
+<rect x="20" y="195" width="180" height="105" rx="18" fill="#fffdf8" stroke="#171418" stroke-opacity=".07"/>
+<text x="38" y="226" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="14" font-weight="700">Web from the ground up</text>
+<text x="38" y="252" fill="#625b5b" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="11">HTML · JavaScript · ActionScript · PHP</text>
 <circle cx="315" cy="164" r="10" fill="#fffdf8" stroke="#f6535f" stroke-width="4">
 <animate attributeName="r" values="8;13;8" dur="3.8s" begin="0.35s" repeatCount="indefinite"/>
 </circle>
@@ -42,7 +42,7 @@
 <animate attributeName="r" values="8;13;8" dur="3.8s" begin="1.40s" repeatCount="indefinite"/>
 </circle>
 <text x="990" y="137" text-anchor="middle" fill="#f6535f" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="760">2024–26</text>
-<rect x="890" y="195" width="200" height="105" rx="18" fill="#fffdf8" stroke="#171418" stroke-opacity=".07"/>
+<rect x="890" y="195" width="260" height="105" rx="18" fill="#fffdf8" stroke="#171418" stroke-opacity=".07"/>
 <text x="908" y="226" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="14" font-weight="700">Products + critical operations</text>
 <text x="908" y="252" fill="#625b5b" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="11">Brazilian Outlets/Sarah · SISAP/NTT · ACSMTI products</text>
 <text x="48" y="334" fill="#625b5b" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="12">details → docs/work-beyond-github.md</text>
