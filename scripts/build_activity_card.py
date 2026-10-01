@@ -53,7 +53,8 @@ def parse(source: str):
         days.append((datetime.strptime(day, "%Y-%m-%d").date(), count))
 
     if len(days) < 300:
-        print("DEBUG source head:", source[:4000])
+        print("DEBUG markers:", {k: source.find(k) for k in ["data-date", "ContributionCalendar-day", "tool-tip", "contribution-day", "<tbody", "<rect"]})
+        print("DEBUG tbody:", source[source.find("<tbody"):source.find("<tbody")+8000] if "<tbody" in source else source[:8000])
         raise RuntimeError(f"Contribution parser returned only {len(days)} days")
     if unresolved_active:
         raise RuntimeError(
