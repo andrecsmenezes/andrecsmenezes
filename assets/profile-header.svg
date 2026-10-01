@@ -1,24 +1,41 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="André Menezes — Tech Lead, Software Engineering and Architecture">
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#070A12"/><stop offset="0.55" stop-color="#10182A"/><stop offset="1" stop-color="#15112A"/></linearGradient>
-  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#42D3FF"/><stop offset="0.48" stop-color="#7C6CFF"/><stop offset="1" stop-color="#D56BFF"/></linearGradient>
-  <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#FFFFFF" stroke-opacity=".045"/></pattern>
-  <filter id="glow"><feGaussianBlur stdDeviation="24"/></filter>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+    <stop stop-color="#f68543"/>
+    <stop offset=".36" stop-color="#f6535f"/>
+    <stop offset=".68" stop-color="#ef1f63"/>
+    <stop offset="1" stop-color="#9d1348"/>
+  </linearGradient>
+  <radialGradient id="wash1" cx="0" cy="0" r="1" gradientTransform="translate(980 70) rotate(135) scale(330 250)">
+    <stop stop-color="#f6535f" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#f6535f" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="wash2" cx="0" cy="0" r="1" gradientTransform="translate(1110 250) rotate(-150) scale(280 220)">
+    <stop stop-color="#ef1f63" stop-opacity=".13"/>
+    <stop offset="1" stop-color="#ef1f63" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.2" fill="#171418" fill-opacity=".045"/>
+  </pattern>
 </defs>
-<rect width="1200" height="320" rx="28" fill="url(#bg)"/>
-<rect width="1200" height="320" rx="28" fill="url(#grid)"/>
-<circle cx="1040" cy="65" r="120" fill="#6E5CFF" opacity=".12" filter="url(#glow)"/>
-<circle cx="1120" cy="270" r="145" fill="#37C9FF" opacity=".08" filter="url(#glow)"/>
-<rect x="58" y="54" width="10" height="212" rx="5" fill="url(#accent)"/>
-<text x="98" y="118" fill="#F8FAFC" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="48" font-weight="760">ANDRÉ MENEZES</text>
-<text x="100" y="160" fill="#A9B7CC" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="19" letter-spacing="3">TECH LEAD  ·  SOFTWARE ENGINEERING  ·  ARCHITECTURE</text>
-<text x="100" y="214" fill="#DDE6F2" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="23">Production systems, product engineering and automation.</text>
-<g transform="translate(886 104)" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="40" cy="56" r="9" fill="#42D3FF"/>
-  <circle cx="122" cy="20" r="9" fill="#7C6CFF"/>
-  <circle cx="196" cy="82" r="9" fill="#D56BFF"/>
-  <circle cx="104" cy="132" r="9" fill="#42D3FF"/>
-  <path d="M48 52L113 24M130 27L188 76M190 88L112 128M97 126L46 63M124 29L108 123" fill="none" stroke="url(#accent)" stroke-width="3" opacity=".86"/>
+<rect width="1200" height="320" rx="30" fill="#fdf9ee"/>
+<rect width="1200" height="320" rx="30" fill="url(#wash1)"/>
+<rect width="1200" height="320" rx="30" fill="url(#wash2)"/>
+<rect width="1200" height="320" rx="30" fill="url(#dots)"/>
+<rect x="52" y="48" width="8" height="224" rx="4" fill="url(#accent)"/>
+<text x="92" y="115" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="48" font-weight="760">ANDRÉ MENEZES</text>
+<text x="94" y="157" fill="#625b5b" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="18" letter-spacing="2.8">TECH LEAD  ·  SOFTWARE ENGINEERING  ·  ARCHITECTURE</text>
+<text x="94" y="213" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="23">Production systems, product engineering and automation.</text>
+<text x="94" y="258" fill="#625b5b" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="14">architecture / reliability / platform / product / AI-assisted engineering</text>
+<g transform="translate(900 75)">
+  <circle cx="102" cy="82" r="78" fill="#fffdf8" stroke="#171418" stroke-opacity=".08"/>
+  <circle cx="102" cy="82" r="52" fill="none" stroke="#f68543" stroke-width="2" stroke-opacity=".6"/>
+  <circle cx="102" cy="82" r="30" fill="none" stroke="#ef1f63" stroke-width="2" stroke-opacity=".58"/>
+  <circle cx="102" cy="82" r="8" fill="#9d1348"/>
+  <circle cx="28" cy="30" r="8" fill="#f68543"/>
+  <circle cx="182" cy="32" r="8" fill="#f6535f"/>
+  <circle cx="192" cy="150" r="8" fill="#ef1f63"/>
+  <path d="M35 35L84 64M175 38L122 65M184 146L126 102" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" opacity=".9"/>
 </g>
-<text x="100" y="258" fill="#7F8DA4" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="15">architecture / reliability / platform / product / AI-assisted engineering</text>
+<rect x="0.75" y="0.75" width="1198.5" height="318.5" rx="29.25" fill="none" stroke="#171418" stroke-opacity=".08" stroke-width="1.5"/>
 </svg>
