@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96" viewBox="0 0 360 96" role="img" aria-label="LinkedIn">
+<defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#211b20"/><stop offset="1" stop-color="#171418"/></linearGradient></defs>
+<rect x="1" y="1" width="358" height="94" rx="22" fill="url(#b)" stroke="#f6535f" stroke-opacity=".45"/>
+<rect x="28" y="30" width="36" height="36" rx="8" fill="#f6535f"/><text x="46" y="56" text-anchor="middle" fill="#171418" font-family="Arial,sans-serif" font-size="22" font-weight="800">in</text>
+<text x="86" y="43" fill="#fffdf8" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="17" font-weight="730">LinkedIn</text>
+<text x="86" y="65" fill="#c9bec1" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="12">andrecsmenezes</text>
+<circle cx="326" cy="48" r="5" fill="#f6535f"><animate attributeName="opacity" values=".35;1;.35" dur="2.4s" repeatCount="indefinite"/></circle>
+</svg>
