@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="132" viewBox="0 0 1200 132" role="img" aria-label="Current work">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f68543"/><stop offset=".45" stop-color="#f6535f"/><stop offset=".75" stop-color="#ef1f63"/><stop offset="1" stop-color="#9d1348"/></linearGradient></defs>
+<rect width="1200" height="132" rx="28" fill="#171418"/><rect x="1" y="1" width="1198" height="130" rx="27" fill="none" stroke="#fffdf8" stroke-opacity=".09"/>
+<circle cx="54" cy="48" r="7" fill="#ef1f63"><animate attributeName="opacity" values=".25;1;.25" dur="1.8s" repeatCount="indefinite"/></circle>
+<text x="78" y="54" fill="#c9bec1" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="650" letter-spacing="1.6">CURRENTLY BUILDING</text>
+<text x="52" y="96" fill="#fffdf8" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="23" font-weight="680">ACSMTI</text>
+<text x="202" y="96" fill="#c9bec1" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="18">/</text>
+<text x="232" y="96" fill="#fffdf8" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="23" font-weight="680">Captador de Leads</text>
+<text x="466" y="96" fill="#c9bec1" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="18">/</text>
+<text x="496" y="96" fill="#fffdf8" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="23" font-weight="680">UDP</text>
+<text x="574" y="96" fill="#c9bec1" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="18">/</text>
+<text x="604" y="96" fill="#fffdf8" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="23" font-weight="680">The Church System</text>
+<rect x="980" y="89" width="160" height="4" rx="2" fill="#33272d"/>
+<rect x="980" y="89" width="52" height="4" rx="2" fill="url(#g)"><animate attributeName="x" values="980;1088;980" dur="4s" repeatCount="indefinite"/></rect>
+</svg>
