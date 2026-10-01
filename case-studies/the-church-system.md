@@ -1,1 +1,64 @@
-# The Church System\n\n> **Private production source · Public engineering case study**\n\n## Context\n\nA modular, multi-tenant institutional platform spanning backoffice, public web and mobile experiences. Its architecture must handle ordinary operational workflows alongside privacy-sensitive domains, authorization boundaries and cross-platform consistency.\n\n## Architecture at a glance\n\n```mermaid\nflowchart TD\n    U[Users] --> W[Public Web]\n    U --> M[Mobile App]\n    S[Staff] --> P[Backoffice]\n    W --> APP[Application layer]\n    M --> APP\n    P --> APP\n    APP --> D[Bounded contexts]\n    D --> AUTH[Authorization / tenant scope]\n    D --> AUDIT[Audit & observability]\n    D --> DATA[(Tenant-aware persistence)]\n    AUTH --> DATA\n```\n\n## Engineering decisions\n\n### Multi-tenancy is an architectural concern\nTenant identity and isolation are part of authorization and data-access decisions rather than a cosmetic filtering layer.\n\n### Bounded contexts over framework folders\nDomain responsibilities are documented explicitly so modules can evolve around business capability instead of becoming one undifferentiated application.\n\n### Authorization beyond simple roles\nRole-based permissions are combined with contextual scope and ownership rules where required. Authorization decisions account for tenant boundaries and confidentiality.\n\n### Privacy-sensitive domains are explicit\nPrivacy, retention, consent and sensitive workflows are documented as architecture topics. They are not delegated entirely to controller-level implementation.\n\n### Architecture Decision Records\nMaterial decisions are captured as ADRs so future changes can recover the original constraints and trade-offs instead of rediscovering them.\n\n## Quality strategy\n\n- Docker-first execution for application, migrations, seed and tests.\n- Broad automated backend coverage complemented by smoke suites.\n- Mobile contract/session validation.\n- Health and observability endpoints.\n- Documentation links implementation, architectural decisions and execution checklists.\n\n## Technology surface\n\nPHP · Laravel · Filament · Blade/Livewire · Flutter · Docker · DDD · RBAC/ABAC · multi-tenancy\n\n## What this case demonstrates\n\n- Designing authorization and tenancy together.\n- Maintaining architectural coherence across web, backoffice and mobile.\n- Treating privacy and retention as system design concerns.\n- Using ADRs and durable documentation to support long-lived systems.\n\n---\n\n[← Back to profile](../README.md) · [Disclosure model](../docs/private-to-public.md)
+# The Church System
+
+> **Private production source · Public engineering case study**
+
+## Context
+
+A modular, multi-tenant institutional platform spanning backoffice, public web and mobile experiences. Its architecture must handle ordinary operational workflows alongside privacy-sensitive domains, authorization boundaries and cross-platform consistency.
+
+## Architecture at a glance
+
+```mermaid
+flowchart TD
+    U[Users] --> W[Public Web]
+    U --> M[Mobile App]
+    S[Staff] --> P[Backoffice]
+    W --> APP[Application layer]
+    M --> APP
+    P --> APP
+    APP --> D[Bounded contexts]
+    D --> AUTH[Authorization / tenant scope]
+    D --> AUDIT[Audit & observability]
+    D --> DATA[(Tenant-aware persistence)]
+    AUTH --> DATA
+```
+
+## Engineering decisions
+
+### Multi-tenancy is an architectural concern
+Tenant identity and isolation are part of authorization and data-access decisions rather than a cosmetic filtering layer.
+
+### Bounded contexts over framework folders
+Domain responsibilities are documented explicitly so modules can evolve around business capability instead of becoming one undifferentiated application.
+
+### Authorization beyond simple roles
+Role-based permissions are combined with contextual scope and ownership rules where required. Authorization decisions account for tenant boundaries and confidentiality.
+
+### Privacy-sensitive domains are explicit
+Privacy, retention, consent and sensitive workflows are documented as architecture topics. They are not delegated entirely to controller-level implementation.
+
+### Architecture Decision Records
+Material decisions are captured as ADRs so future changes can recover the original constraints and trade-offs instead of rediscovering them.
+
+## Quality strategy
+
+- Docker-first execution for application, migrations, seed and tests.
+- Broad automated backend coverage complemented by smoke suites.
+- Mobile contract/session validation.
+- Health and observability endpoints.
+- Documentation links implementation, architectural decisions and execution checklists.
+
+## Technology surface
+
+PHP · Laravel · Filament · Blade/Livewire · Flutter · Docker · DDD · RBAC/ABAC · multi-tenancy
+
+## What this case demonstrates
+
+- Designing authorization and tenancy together.
+- Maintaining architectural coherence across web, backoffice and mobile.
+- Treating privacy and retention as system design concerns.
+- Using ADRs and durable documentation to support long-lived systems.
+
+---
+
+[← Back to profile](../README.md) · [Disclosure model](../docs/private-to-public.md)
