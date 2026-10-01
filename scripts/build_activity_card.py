@@ -13,10 +13,10 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "generated"
 URL = f"https://github.com/users/{USERNAME}/contributions"
 
-CELL_RE = re.compile(r"<td[^>]*class=\"[^\"]*ContributionCalendar-day[^\"]*\"[^>]*>", re.I)
-ATTR_RE = re.compile(r'(?:^|\\s)([\\w:-]+)=\"([^\"]*)\"')
+CELL_RE = re.compile(r'<[^>]+\bdata-date="\d{4}-\d{2}-\d{2}"[^>]*>', re.I)
+ATTR_RE = re.compile(r'(?:^|\s)([\w:-]+)="([^"]*)"')
 TOOLTIP_RE = re.compile(
-    r'<tool-tip[^>]*for=\"([^\"]+)\"[^>]*>\\s*([\\d,]+)\\s+contribution',
+    r'<tool-tip[^>]*for="([^"]+)"[^>]*>\s*([\d,]+)\s+contribution',
     re.I,
 )
 
