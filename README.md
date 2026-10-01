@@ -12,21 +12,19 @@
   <a href="mailto:andre.cs.menezes@gmail.com">Email</a>
 </p>
 
-### Hi, I'm André.
+I've been building for the web since the early 2000s. **PHP/Laravel is where I have the deepest production mileage**, but I have spent years working across JavaScript/TypeScript, Node.js, Vue/React, SQL, APIs, Docker, CI/CD and AWS.
 
-I build software products and the systems behind them.
+Most of my work is not greenfield. There is usually code, data, users and something that cannot stop. I prefer to **read the system first, find the risky parts, change it in pieces and keep a way back**.
 
-I like work that starts messy: an old system, a manual process, a product that grew faster than its architecture. My job is to make it easier to understand, safer to change and simpler to ship.
+I also do not believe much in architecture that only exists in a diagram. If a boundary matters, I want to see it in code, contracts, tests, CI or the way the system is operated.
 
-Most of what I'm building right now is private. The source stays private; the engineering doesn't have to. I publish the decisions, diagrams, tests and trade-offs I can share without exposing the product.
+<p align="center">
+  <img src="./assets/systems-light.svg" alt="Animated view of product, API, data, workers, CI and delivery" width="100%">
+</p>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/now-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/now-light.svg">
-  <img src="./assets/now-light.svg" alt="Current projects" width="100%">
-</picture>
+## What I'm building now
 
-## What I'm building
+Most of these repositories are private. The source stays private; the useful engineering context does not.
 
 <table>
 <tr>
@@ -87,12 +85,35 @@ Tenancy, authorization, privacy and day-to-day operations across backoffice, web
 </tr>
 </table>
 
-## A few rules I work by
+## This account is only part of the story
 
-- **If a boundary matters, name it.** Hidden architecture eventually becomes expensive architecture.
-- **If a rule matters, put it in CI.** A convention nobody checks is just a suggestion.
-- **Automate repetition, not accountability.** Critical decisions should still have an owner.
-- **Docs have to survive the next release.** Otherwise they are decoration.
+Some of the strongest systems I worked on live in company/client repositories or older infrastructure, so they will never appear in the repository list below.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/career-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/career-light.svg">
+  <img src="./assets/career-light.svg" alt="Technical timeline from early web work to current products" width="100%">
+</picture>
+
+A few examples:
+
+- a **4M+ user platform modernization**, moving incrementally from PHP legacy toward Node.js/TypeScript + Vue/TypeScript with a team of six;
+- the **Subway franchise platform**, including a visual editor and graphic-production flow;
+- healthcare work at **Clinicarx**, marketplace/payment work at **TROC/Monest**, pricing architecture at **Teros** and **Open Finance** work at FCamara;
+- a **telemedicine/video-call product** using Vue, React and Twilio;
+- **Brazilian Outlets / Sarah / Brazipay**, mixing marketplace, payments, WhatsApp, automation, CI/CD and AWS;
+- **SISAP / SPRO / NTT**, keeping a PHP 5.x + MySQL critical legacy system running while delivering 30+ evolutions and SAP Business One integrations.
+
+**[Read the work that does not live under this GitHub →](./docs/work-beyond-github.md)**
+
+## How I tend to work
+
+- **Read before rewriting.** I want the real dependency map, not the one everybody remembers.
+- **Do not replace legacy just because it is old.** Change the part that hurts, measure it and keep the system running.
+- **Put risky work behind tests, logs and a rollback path.**
+- **If a rule matters, automate the check.** CI is better than a document nobody remembers to read.
+- **Keep technical decisions close to the code.** ADRs, contracts and short documentation age better than giant handbooks.
+- **Use AI as part of the engineering loop, not as an excuse to skip verification.**
 
 ## GitHub, in motion
 
@@ -108,17 +129,17 @@ Tenancy, authorization, privacy and day-to-day operations across backoffice, web
   <img src="https://raw.githubusercontent.com/andrecsmenezes/andrecsmenezes/output/contribution-snake-light.svg" alt="Animated GitHub contribution graph" width="100%">
 </picture>
 
-Both are rebuilt every day from GitHub activity. Private contribution counts can appear here when GitHub exposes them publicly; repository names and private details do not.
+Both are rebuilt automatically. Private contribution counts can appear when GitHub exposes them publicly; repository names and private details do not.
 
 ## Code you can open
 
 ### [package-unifier](https://github.com/andrecsmenezes/package-unifier)
 
-A WordPress/Composer dependency-management experiment. It is public on purpose: the README explains both the idea **and where the current implementation falls short**.
+A WordPress/Composer dependency-management experiment. It is public on purpose: the README explains the idea **and where the current implementation falls short**.
 
 ## About the private repos
 
-Private code stays private. The case studies only expose material I have deliberately chosen to make public, and this profile has a CI guard for common secret patterns, unexpected file types and broken local references.
+Private code stays private. The case studies only expose material I deliberately chose to make public, and this profile has a CI guard for common secret patterns, unexpected file types and broken local references.
 
 [How the disclosure boundary works →](./docs/private-to-public.md)
 
