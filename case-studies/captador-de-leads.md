@@ -1,68 +1,64 @@
 # Captador de Leads
 
-> **Private production source · Public engineering case study**
+> Source code is private. This page shows the parts I can discuss without exposing the product.
 
-## Context
+## Why I built it
 
-A local-first platform for lead acquisition and commercial operations. What began as a single acquisition integration evolved into a broader system responsible for source ingestion, identity resolution, campaign state, research, qualification, opportunity evidence, human review and communication-provider integration.
+Lead generation looks simple until it becomes operational.
 
-The public case study intentionally describes **system boundaries and engineering decisions**, not proprietary source code, credentials, private endpoints, customer data or internal operating records.
+Finding a company is one problem. Deciding whether it is the same company you found yesterday, keeping the source of every piece of data, researching it, deciding whether it is worth contacting and then coordinating outreach is a different system entirely.
 
-## Architecture at a glance
+The Captador grew around that second problem.
+
+## The shape of the system
 
 ```mermaid
 flowchart LR
-    S[Acquisition sources] --> A[Adapter layer]
+    S[Acquisition sources] --> A[Adapters]
     A --> I[Identity & provenance]
     I --> DB[(PostgreSQL / PostGIS)]
-    DB --> C[Campaign engine]
-    DB --> R[Research & qualification]
+    DB --> C[Campaigns]
+    DB --> R[Research]
     C --> O[Opportunity workflow]
     R --> O
-    O --> H{Human review gate}
-    H -->|approved| E[Engagement layer]
+    O --> H{Human approval}
+    H -->|approved| E[Engagement]
     E --> P[Provider adapters]
-    DB --> W[Background workers]
+    DB --> W[Workers]
     W --> O
     DB --> OBS[Audit & observability]
 ```
 
-## Engineering decisions
+## Decisions that mattered
 
-### PostgreSQL as the operational source of truth
-Operational state is persisted rather than inferred from browser sessions or transient jobs. This supports reproducibility, provenance and safer recovery after interrupted work.
+### PostgreSQL is the source of truth
 
-### Adapter boundaries around external providers
-Acquisition and communication integrations sit behind explicit adapter contracts. Provider-specific mechanics do not become business-domain rules.
+Jobs can fail. Browsers close. Providers time out. Operational state therefore lives in the database, not in a chain of assumptions about what probably happened.
 
-### Human-in-the-loop as a product constraint
-The system can prepare evidence, contacts and drafts, but the final contact selection/readiness gate is explicit. Automation is used to reduce repetitive work without hiding consequential actions.
+### Providers stay behind adapters
 
-### Idempotent acquisition
-Equivalent acquisition work is fingerprinted so recent successful captures can be reused rather than repeatedly creating duplicate work and duplicate data.
+Search, messaging and enrichment vendors change. The product should not have to change with them. Provider-specific code stays at the edge; the core workflow speaks its own language.
 
-### Local-first, Docker-first runtime
-Application services, persistence, workers and acquisition integrations are composed behind an isolated Docker network. The normal operator surface is intentionally smaller than the internal service topology.
+### Human approval is not a temporary workaround
 
-## Reliability & safety
+The system can collect evidence, prepare work and reduce repetition. It does not silently turn an uncertain lead into an outbound contact. That gate is deliberate.
 
-- Background work is persisted rather than existing only in memory.
-- Provider failover is explicit; ambiguous messages are not silently resent through another channel.
-- Validation distinguishes behavioral evidence from simple test-count inflation.
-- Operational actions maintain provenance/audit records.
-- Sensitive provider configuration is kept outside public portfolio material.
+### Acquisition has to be idempotent
 
-## Technology surface
+Running the same search twice should not create two realities. Equivalent work is fingerprinted and recent successful results can be reused.
 
-FastAPI · Python · PostgreSQL/PostGIS · Node.js adapters · Docker · background workers · provider integrations · structured specifications
+## What I watch closely
 
-## What this case demonstrates
+- duplicate identities and provenance;
+- retries that accidentally become duplicate sends;
+- background jobs that disappear without leaving evidence;
+- provider failures leaking into product rules;
+- automation that makes an important decision harder to see.
 
-- Growing a single-purpose tool into a bounded platform without losing traceability.
-- Designing for integration churn through adapters rather than provider coupling.
-- Treating human approval as an architectural invariant.
-- Combining product workflow, persistence, observability and recovery concerns.
+## Stack
+
+FastAPI · Python · PostgreSQL/PostGIS · Node.js adapters · Docker · background workers
 
 ---
 
-[← Back to profile](../README.md) · [Disclosure model](../docs/private-to-public.md)
+[← Back to profile](../README.md) · [How private material is kept out](../docs/private-to-public.md)
