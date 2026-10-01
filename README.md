@@ -8,6 +8,10 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/portfolio-guard.yml"><img src="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/portfolio-guard.yml/badge.svg" alt="Portfolio Guard"/></a>
+</p>
+
+<p align="center">
   <code>TypeScript</code> · <code>React</code> · <code>Node.js</code> · <code>Go</code> · <code>Python</code> · <code>PHP</code> · <code>Docker</code> · <code>PostgreSQL</code>
 </p>
 
@@ -85,14 +89,9 @@ Laravel · Filament · Flutter · DDD · RBAC/ABAC · Docker
 </tr>
 </table>
 
-## Public work
+## Source strategy
 
-Some smaller utilities, experiments and technical exercises remain public for direct source inspection.
-
-- [package-unifier](https://github.com/andrecsmenezes/package-unifier) — WordPress vendor-folder unification utility.
-- [acsmti-route](https://github.com/andrecsmenezes/acsmti-route) — compact PHP route-pattern/parameter experiment.
-
-The profile intentionally prioritizes **finished systems and engineering evidence** over repository count.
+Current commercial systems remain private. This profile is deliberately curated around **engineering evidence instead of repository volume**. Public source is added when it represents the same quality bar as the case studies above.
 
 ## Private source, public evidence
 
