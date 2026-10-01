@@ -1,64 +1,56 @@
 # The Church System
 
-> **Private production source · Public engineering case study**
+> Private source. Public architecture notes.
 
-## Context
+## Why this one is different
 
-A modular, multi-tenant institutional platform spanning backoffice, public web and mobile experiences. Its architecture must handle ordinary operational workflows alongside privacy-sensitive domains, authorization boundaries and cross-platform consistency.
+Multi-tenant software gets dangerous when tenancy, authorization and privacy are bolted on after the feature work.
 
-## Architecture at a glance
+The Church System has ordinary product concerns — backoffice, public web, mobile, workflows and reporting — but it also handles domains where access and confidentiality matter. Those constraints have to shape the architecture from the beginning.
+
+## The shape of the system
 
 ```mermaid
 flowchart TD
-    U[Users] --> W[Public Web]
-    U --> M[Mobile App]
+    U[Users] --> W[Public web]
+    U --> M[Mobile app]
     S[Staff] --> P[Backoffice]
     W --> APP[Application layer]
     M --> APP
     P --> APP
     APP --> D[Bounded contexts]
-    D --> AUTH[Authorization / tenant scope]
+    D --> AUTH[Authorization + tenant scope]
     D --> AUDIT[Audit & observability]
     D --> DATA[(Tenant-aware persistence)]
     AUTH --> DATA
 ```
 
-## Engineering decisions
+## Decisions that mattered
 
-### Multi-tenancy is an architectural concern
-Tenant identity and isolation are part of authorization and data-access decisions rather than a cosmetic filtering layer.
+### Tenant isolation is not a query filter
 
-### Bounded contexts over framework folders
-Domain responsibilities are documented explicitly so modules can evolve around business capability instead of becoming one undifferentiated application.
+Tenant identity participates in authorization and data-access decisions. It cannot depend on every developer remembering to add one more `where` clause.
 
-### Authorization beyond simple roles
-Role-based permissions are combined with contextual scope and ownership rules where required. Authorization decisions account for tenant boundaries and confidentiality.
+### Roles are only part of authorization
 
-### Privacy-sensitive domains are explicit
-Privacy, retention, consent and sensitive workflows are documented as architecture topics. They are not delegated entirely to controller-level implementation.
+RBAC is useful, but some decisions also depend on tenant, ownership, scope and confidentiality. Those rules belong in the authorization model.
 
-### Architecture Decision Records
-Material decisions are captured as ADRs so future changes can recover the original constraints and trade-offs instead of rediscovering them.
+### Sensitive domains are named
 
-## Quality strategy
+Privacy, consent, retention and sensitive workflows are architecture topics in this project. Naming them makes them reviewable.
 
-- Docker-first execution for application, migrations, seed and tests.
-- Broad automated backend coverage complemented by smoke suites.
-- Mobile contract/session validation.
-- Health and observability endpoints.
-- Documentation links implementation, architectural decisions and execution checklists.
+### Important decisions get an ADR
 
-## Technology surface
+When a decision has a real trade-off, I want the next person to know why it was made before replacing it.
+
+### The test suite is intentionally large
+
+The backend currently documents more than 5,500 PHPUnit test methods across more than 900 test files, with smaller smoke suites for the critical path. The point is not the number by itself; it is keeping a broad system changeable.
+
+## Stack
 
 PHP · Laravel · Filament · Blade/Livewire · Flutter · Docker · DDD · RBAC/ABAC · multi-tenancy
 
-## What this case demonstrates
-
-- Designing authorization and tenancy together.
-- Maintaining architectural coherence across web, backoffice and mobile.
-- Treating privacy and retention as system design concerns.
-- Using ADRs and durable documentation to support long-lived systems.
-
 ---
 
-[← Back to profile](../README.md) · [Disclosure model](../docs/private-to-public.md)
+[← Back to profile](../README.md) · [How private material is kept out](../docs/private-to-public.md)
