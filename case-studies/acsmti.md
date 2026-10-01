@@ -1,1 +1,65 @@
-# ACSMTI\n\n> **Private production source · Public engineering case study**\n\n## Context\n\nA commercial digital-experience platform designed to combine high-end interaction, strong responsive behavior and maintainable frontend architecture. The implementation separates reusable UI primitives from page composition and treats motion, design tokens and deployment constraints as first-class engineering concerns.\n\n## Architecture at a glance\n\n```mermaid\nflowchart TD\n    P[Pages / routes] --> C[Feature composition]\n    C --> UI[Reusable UI package]\n    UI --> T[Design tokens]\n    C --> M[Motion layer]\n    P --> API[Server / API boundaries]\n    UI --> Q[Quality gates]\n    M --> Q\n    P --> Q\n    Q --> B[Production build]\n    B --> V[Staging target]\n    B --> H[Static hosting target]\n```\n\n## Engineering decisions\n\n### UI as a reusable system\nReact/TypeScript primitives live separately from route/page composition. This reduces page-specific duplication and makes visual rules easier to validate consistently.\n\n### Design tokens before ad-hoc CSS\nVisual decisions are represented through tokens and Tailwind-based composition rather than accumulating isolated CSS patches.\n\n### Motion is feature-scoped\nGSAP is used deliberately and encapsulated by feature. Animation does not become an uncontrolled global side effect.\n\n### Architectural gates are executable\nCI includes architecture checks alongside linting, type validation, unit tests, production build, end-to-end tests, dependency auditing and artifact smoke checks.\n\n### Deployment targets are explicit\nThe application distinguishes staging/server-capable behavior from a static-hosting production target, with fallbacks for functionality that depends on dynamic endpoints.\n\n## Quality strategy\n\n- TypeScript static validation.\n- Architecture-policy checks.\n- ESLint with zero-warning expectation.\n- Vitest unit tests.\n- Playwright end-to-end and responsive validation.\n- Dependency audit and production artifact smoke checks.\n\n## Technology surface\n\nAstro · React · TypeScript · Tailwind CSS · GSAP · Vitest · Playwright · CI/CD\n\n## What this case demonstrates\n\n- Balancing premium interaction with maintainable frontend boundaries.\n- Treating responsive quality as product behavior, not a final CSS pass.\n- Converting architecture rules into executable CI gates.\n- Designing one codebase for materially different deployment environments.\n\n---\n\n[← Back to profile](../README.md) · [Disclosure model](../docs/private-to-public.md)
+# ACSMTI
+
+> **Private production source · Public engineering case study**
+
+## Context
+
+A commercial digital-experience platform designed to combine high-end interaction, strong responsive behavior and maintainable frontend architecture. The implementation separates reusable UI primitives from page composition and treats motion, design tokens and deployment constraints as first-class engineering concerns.
+
+## Architecture at a glance
+
+```mermaid
+flowchart TD
+    P[Pages / routes] --> C[Feature composition]
+    C --> UI[Reusable UI package]
+    UI --> T[Design tokens]
+    C --> M[Motion layer]
+    P --> API[Server / API boundaries]
+    UI --> Q[Quality gates]
+    M --> Q
+    P --> Q
+    Q --> B[Production build]
+    B --> V[Staging target]
+    B --> H[Static hosting target]
+```
+
+## Engineering decisions
+
+### UI as a reusable system
+React/TypeScript primitives live separately from route/page composition. This reduces page-specific duplication and makes visual rules easier to validate consistently.
+
+### Design tokens before ad-hoc CSS
+Visual decisions are represented through tokens and Tailwind-based composition rather than accumulating isolated CSS patches.
+
+### Motion is feature-scoped
+GSAP is used deliberately and encapsulated by feature. Animation does not become an uncontrolled global side effect.
+
+### Architectural gates are executable
+CI includes architecture checks alongside linting, type validation, unit tests, production build, end-to-end tests, dependency auditing and artifact smoke checks.
+
+### Deployment targets are explicit
+The application distinguishes staging/server-capable behavior from a static-hosting production target, with fallbacks for functionality that depends on dynamic endpoints.
+
+## Quality strategy
+
+- TypeScript static validation.
+- Architecture-policy checks.
+- ESLint with zero-warning expectation.
+- Vitest unit tests.
+- Playwright end-to-end and responsive validation.
+- Dependency audit and production artifact smoke checks.
+
+## Technology surface
+
+Astro · React · TypeScript · Tailwind CSS · GSAP · Vitest · Playwright · CI/CD
+
+## What this case demonstrates
+
+- Balancing premium interaction with maintainable frontend boundaries.
+- Treating responsive quality as product behavior, not a final CSS pass.
+- Converting architecture rules into executable CI gates.
+- Designing one codebase for materially different deployment environments.
+
+---
+
+[← Back to profile](../README.md) · [Disclosure model](../docs/private-to-public.md)
