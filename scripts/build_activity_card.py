@@ -53,6 +53,7 @@ def parse(source: str):
         days.append((datetime.strptime(day, "%Y-%m-%d").date(), count))
 
     if len(days) < 300:
+        print("DEBUG source head:", source[:4000])
         raise RuntimeError(f"Contribution parser returned only {len(days)} days")
     if unresolved_active:
         raise RuntimeError(
