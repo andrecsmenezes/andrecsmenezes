@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="280" viewBox="0 0 800 280" role="img" aria-label="THE CHURCH SYSTEM">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f68543"/><stop offset=".4" stop-color="#f6535f"/><stop offset=".72" stop-color="#ef1f63"/><stop offset="1" stop-color="#9d1348"/></linearGradient></defs>
+<rect width="800" height="280" rx="28" fill="#171418"/><rect x="1" y="1" width="798" height="278" rx="27" fill="none" stroke="#ffffff" stroke-opacity=".10"/>
+<rect x="42" y="38" width="112" height="7" rx="3.5" fill="url(#g)"/>
+<text x="42" y="102" fill="#fffdf8" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="34" font-weight="760">THE CHURCH SYSTEM</text>
+<text x="42" y="144" fill="#c9bec1" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="18">Multi-tenant institutional platform</text>
+<line x1="42" y1="184" x2="758" y2="184" stroke="#ffffff" stroke-opacity=".08"/>
+<text x="42" y="225" fill="#fffdf8" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="15">Laravel · Filament · Flutter · DDD · RBAC/ABAC</text>
+<text x="42" y="257" fill="#f6535f" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="14" font-weight="700">OPEN CASE STUDY →</text>
+<circle cx="722" cy="57" r="22" fill="#ef1f63" opacity=".10"><animate attributeName="r" values="18;24;18" dur="5s" repeatCount="indefinite"/></circle>
+</svg>
