@@ -1,17 +1,21 @@
 # ACSMTI
 
-> **Private production source · Public engineering case study**
+> Source code is private. The live site and the engineering decisions are the public part.
 
-## Context
+## The problem I care about here
 
-A commercial digital-experience platform designed to combine high-end interaction, strong responsive behavior and maintainable frontend architecture. The implementation separates reusable UI primitives from page composition and treats motion, design tokens and deployment constraints as first-class engineering concerns.
+A polished website is easy to make impressive once.
 
-## Architecture at a glance
+Keeping it fast, responsive and maintainable after the tenth visual experiment is the harder part.
+
+ACSMTI is where I am pushing both sides at the same time: a more expressive visual experience, without letting animation and page-specific CSS take over the codebase.
+
+## The shape of the frontend
 
 ```mermaid
 flowchart TD
     P[Pages / routes] --> C[Feature composition]
-    C --> UI[Reusable UI package]
+    C --> UI[Reusable UI]
     UI --> T[Design tokens]
     C --> M[Motion layer]
     P --> API[Server / API boundaries]
@@ -19,47 +23,40 @@ flowchart TD
     M --> Q
     P --> Q
     Q --> B[Production build]
-    B --> V[Staging target]
-    B --> H[Static hosting target]
+    B --> V[Vercel staging]
+    B --> H[Static hosting]
 ```
 
-## Engineering decisions
+## Decisions that mattered
 
-### UI as a reusable system
-React/TypeScript primitives live separately from route/page composition. This reduces page-specific duplication and makes visual rules easier to validate consistently.
+### UI primitives are not page markup
 
-### Design tokens before ad-hoc CSS
-Visual decisions are represented through tokens and Tailwind-based composition rather than accumulating isolated CSS patches.
+Reusable React/TypeScript pieces live separately from route composition. A page can use the system; it should not become the system.
 
-### Motion is feature-scoped
-GSAP is used deliberately and encapsulated by feature. Animation does not become an uncontrolled global side effect.
+### The palette lives in tokens
 
-### Architectural gates are executable
-CI includes architecture checks alongside linting, type validation, unit tests, production build, end-to-end tests, dependency auditing and artifact smoke checks.
+The ACSMTI colors, spacing, radii and breakpoints have a canonical source. That is why this GitHub profile can use the same visual language without sampling colors from screenshots.
 
-### Deployment targets are explicit
-The application distinguishes staging/server-capable behavior from a static-hosting production target, with fallbacks for functionality that depends on dynamic endpoints.
+### Motion has an owner
 
-## Quality strategy
+GSAP is feature-scoped. Animation is allowed to be rich, but it should not create global state nobody understands three months later.
 
-- TypeScript static validation.
-- Architecture-policy checks.
-- ESLint with zero-warning expectation.
-- Vitest unit tests.
-- Playwright end-to-end and responsive validation.
-- Dependency audit and production artifact smoke checks.
+### CI checks architecture too
 
-## Technology surface
+Linting is useful, but it cannot tell me that a boundary has been bypassed. The pipeline also runs architecture checks, types, unit tests, production builds, browser tests, dependency audits and artifact smoke checks.
 
-Astro · React · TypeScript · Tailwind CSS · GSAP · Vitest · Playwright · CI/CD
+### Staging and final hosting are different environments
 
-## What this case demonstrates
+Vercel is useful for staging and server-backed endpoints. The final static hosting target has different constraints. The code has to know that instead of pretending both environments are identical.
 
-- Balancing premium interaction with maintainable frontend boundaries.
-- Treating responsive quality as product behavior, not a final CSS pass.
-- Converting architecture rules into executable CI gates.
-- Designing one codebase for materially different deployment environments.
+## Stack
+
+Astro · React · TypeScript · Tailwind CSS · GSAP · Vitest · Playwright
+
+## Live
+
+[acsmti.com →](https://acsmti.com)
 
 ---
 
-[← Back to profile](../README.md) · [Disclosure model](../docs/private-to-public.md)
+[← Back to profile](../README.md) · [How private material is kept out](../docs/private-to-public.md)
