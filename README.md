@@ -103,6 +103,7 @@ A few examples:
 - a **telemedicine/video-call product** using Vue, React and Twilio;
 - **Brazilian Outlets / Sarah / Brazipay**, mixing marketplace, payments, WhatsApp, automation, CI/CD and AWS;
 - **SISAP / SPRO / NTT**, keeping a PHP 5.x + MySQL critical legacy system running while delivering 30+ evolutions and SAP Business One integrations.
+- internal work such as a queue-based **WhatsApp Service** and **DPLMS**, an engineering audit/refactoring workflow built around repeated find → fix → validate loops.
 
 **[Read the work that does not live under this GitHub →](./docs/work-beyond-github.md)**
 
