@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96" viewBox="0 0 360 96" role="img" aria-label="Website">
+<defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#211b20"/><stop offset="1" stop-color="#171418"/></linearGradient></defs>
+<rect x="1" y="1" width="358" height="94" rx="22" fill="url(#b)" stroke="#f68543" stroke-opacity=".45"/>
+<circle cx="46" cy="48" r="18" fill="none" stroke="#f68543" stroke-width="3"/><path d="M28 48h36M46 30c8 8 8 28 0 36M46 30c-8 8-8 28 0 36" fill="none" stroke="#f68543" stroke-width="2.2" stroke-linecap="round"/>
+<text x="86" y="43" fill="#fffdf8" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="17" font-weight="730">Website</text>
+<text x="86" y="65" fill="#c9bec1" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="12">acsmti.com</text>
+<circle cx="326" cy="48" r="5" fill="#f68543"><animate attributeName="opacity" values=".35;1;.35" dur="2.4s" repeatCount="indefinite"/></circle>
+</svg>
