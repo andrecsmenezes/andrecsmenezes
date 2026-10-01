@@ -5,11 +5,9 @@
 </picture>
 
 <p align="center">
-  <a href="https://acsmti.com">acsmti.com</a>
-  &nbsp;·&nbsp;
-  <a href="https://www.linkedin.com/in/andrecsmenezes">LinkedIn</a>
-  &nbsp;·&nbsp;
-  <a href="mailto:andre.cs.menezes@gmail.com">Email</a>
+  <a href="https://acsmti.com"><img src="./assets/contact-site.svg" alt="ACSMTI website" width="31%"></a>
+  <a href="https://www.linkedin.com/in/andrecsmenezes"><img src="./assets/contact-linkedin.svg" alt="LinkedIn" width="31%"></a>
+  <a href="mailto:andre.cs.menezes@gmail.com"><img src="./assets/contact-email.svg" alt="Email" width="31%"></a>
 </p>
 
 I've been building for the web since the early 2000s. **PHP/Laravel is where I have the deepest production mileage**, but I have spent years working across JavaScript/TypeScript, Node.js, Vue/React, SQL, APIs, Docker, CI/CD and AWS.
