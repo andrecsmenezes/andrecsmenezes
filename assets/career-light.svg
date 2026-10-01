@@ -1,49 +1,93 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="Technical timeline">
-<defs>
-<linearGradient id="brand" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f68543"/><stop offset=".42" stop-color="#f6535f"/><stop offset=".72" stop-color="#ef1f63"/><stop offset="1" stop-color="#9d1348"/></linearGradient>
-</defs>
-<rect width="1200" height="360" rx="30" fill="#fdf9ee"/>
-<rect x="1" y="1" width="1198" height="358" rx="29" fill="none" stroke="#171418" stroke-opacity=".09"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="570" viewBox="0 0 1200 570" role="img" aria-label="Technical timeline">
+<defs><linearGradient id="brand" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f68543"/><stop offset=".42" stop-color="#f6535f"/><stop offset=".72" stop-color="#ef1f63"/><stop offset="1" stop-color="#9d1348"/></linearGradient></defs>
+<rect width="1200" height="570" rx="30" fill="#fdf9ee"/>
+<rect x="1" y="1" width="1198" height="568" rx="29" fill="none" stroke="#171418" stroke-opacity=".09"/>
 <text x="48" y="54" fill="#625b5b" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="650" letter-spacing="1.5">A LONGER STORY THAN THIS ACCOUNT</text>
 <text x="48" y="91" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="24" font-weight="720">Some of the work lives in company repos, client repos or older systems.</text>
-<line x1="110" y1="164" x2="1015" y2="164" stroke="#171418" stroke-opacity=".12" stroke-width="5" stroke-linecap="round"/>
-<line x1="90" y1="164" x2="1015" y2="164" stroke="url(#brand)" stroke-width="5" stroke-linecap="round" stroke-dasharray="925" stroke-dashoffset="925">
-<animate attributeName="stroke-dashoffset" from="925" to="0" dur="2.4s" fill="freeze"/>
+<line x1="90" y1="330" x2="1110" y2="330" stroke="#171418" stroke-opacity=".12" stroke-width="5" stroke-linecap="round"/>
+<line x1="90" y1="330" x2="1110" y2="330" stroke="url(#brand)" stroke-width="5" stroke-linecap="round" stroke-dasharray="1020" stroke-dashoffset="1020">
+  <animate attributeName="stroke-dashoffset" from="1020" to="0" dur="2.6s" fill="freeze"/>
 </line>
-<circle cx="110" cy="164" r="10" fill="#fffdf8" stroke="#f6535f" stroke-width="4">
-<animate attributeName="r" values="8;13;8" dur="3.8s" begin="0.00s" repeatCount="indefinite"/>
-</circle>
-<text x="110" y="137" text-anchor="middle" fill="#f6535f" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="760">2000s</text>
-<rect x="20" y="195" width="180" height="105" rx="18" fill="#fffdf8" stroke="#171418" stroke-opacity=".07"/>
-<text x="38" y="226" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="14" font-weight="700">Web from the ground up</text>
-<text x="38" y="252" fill="#625b5b" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="11">HTML · JavaScript · ActionScript · PHP</text>
-<circle cx="315" cy="164" r="10" fill="#fffdf8" stroke="#f6535f" stroke-width="4">
-<animate attributeName="r" values="8;13;8" dur="3.8s" begin="0.35s" repeatCount="indefinite"/>
-</circle>
-<text x="315" y="137" text-anchor="middle" fill="#f6535f" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="760">2013–18</text>
-<rect x="215" y="195" width="200" height="105" rx="18" fill="#fffdf8" stroke="#171418" stroke-opacity=".07"/>
-<text x="233" y="226" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="14" font-weight="700">Enterprise + franchise systems</text>
-<text x="233" y="252" fill="#625b5b" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="11">Zend/PHP · Node/Asterisk · Laravel · Subway</text>
-<circle cx="540" cy="164" r="10" fill="#fffdf8" stroke="#f6535f" stroke-width="4">
-<animate attributeName="r" values="8;13;8" dur="3.8s" begin="0.70s" repeatCount="indefinite"/>
-</circle>
-<text x="540" y="137" text-anchor="middle" fill="#f6535f" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="760">2019–22</text>
-<rect x="440" y="195" width="200" height="105" rx="18" fill="#fffdf8" stroke="#171418" stroke-opacity=".07"/>
-<text x="458" y="226" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="14" font-weight="700">Modernization at scale</text>
-<text x="458" y="252" fill="#625b5b" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="11">4M+ users · PHP → Node/TS · Vue/TS · team of 6</text>
-<circle cx="765" cy="164" r="10" fill="#fffdf8" stroke="#f6535f" stroke-width="4">
-<animate attributeName="r" values="8;13;8" dur="3.8s" begin="1.05s" repeatCount="indefinite"/>
-</circle>
-<text x="765" y="137" text-anchor="middle" fill="#f6535f" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="760">2021–22</text>
-<rect x="665" y="195" width="200" height="105" rx="18" fill="#fffdf8" stroke="#171418" stroke-opacity=".07"/>
-<text x="683" y="226" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="14" font-weight="700">Health · marketplace · finance</text>
-<text x="683" y="252" fill="#625b5b" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="11">Clinicarx · TROC/Monest · Teros · Open Finance</text>
-<circle cx="990" cy="164" r="10" fill="#fffdf8" stroke="#f6535f" stroke-width="4">
-<animate attributeName="r" values="8;13;8" dur="3.8s" begin="1.40s" repeatCount="indefinite"/>
-</circle>
-<text x="990" y="137" text-anchor="middle" fill="#f6535f" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="760">2024–26</text>
-<rect x="890" y="195" width="260" height="105" rx="18" fill="#fffdf8" stroke="#171418" stroke-opacity=".07"/>
-<text x="908" y="226" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="14" font-weight="700">Products + critical operations</text>
-<text x="908" y="252" fill="#625b5b" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="11">Brazilian Outlets/Sarah · SISAP/NTT · ACSMTI products</text>
-<text x="48" y="334" fill="#625b5b" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="12">details → docs/work-beyond-github.md</text>
+
+<g>
+  <line x1="125" y1="330" x2="125" y2="270" stroke="url(#brand)" stroke-width="2.5" stroke-opacity=".85"/>
+  <circle cx="125" cy="330" r="10" fill="#fffdf8" stroke="#f6535f" stroke-width="4">
+    <animate attributeName="r" values="8;13;8" dur="3.8s" begin="0.00s" repeatCount="indefinite"/>
+  </circle>
+  <text x="125" y="310" text-anchor="middle" fill="#f6535f" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="760">2000s</text>
+  <rect x="20" y="135" width="210" height="135" rx="20" fill="#fffdf8" stroke="#171418" stroke-opacity=".08"/>
+  <text x="38" y="169" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="14" font-weight="720">
+    <tspan x="38" dy="0">Web from the</tspan>
+    <tspan x="38" dy="20">ground up</tspan>
+  </text>
+  <text x="38" y="226" fill="#625b5b" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="11.5">
+    <tspan x="38" dy="0">HTML · JavaScript</tspan>
+    <tspan x="38" dy="18">ActionScript · PHP</tspan>
+  </text>
+</g>
+<g>
+  <line x1="360" y1="330" x2="360" y2="385" stroke="url(#brand)" stroke-width="2.5" stroke-opacity=".85"/>
+  <circle cx="360" cy="330" r="10" fill="#fffdf8" stroke="#f6535f" stroke-width="4">
+    <animate attributeName="r" values="8;13;8" dur="3.8s" begin="0.35s" repeatCount="indefinite"/>
+  </circle>
+  <text x="360" y="360" text-anchor="middle" fill="#f6535f" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="760">2013–18</text>
+  <rect x="255" y="385" width="210" height="135" rx="20" fill="#fffdf8" stroke="#171418" stroke-opacity=".08"/>
+  <text x="273" y="419" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="14" font-weight="720">
+    <tspan x="273" dy="0">Enterprise + franchise</tspan>
+    <tspan x="273" dy="20">systems</tspan>
+  </text>
+  <text x="273" y="476" fill="#625b5b" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="11.5">
+    <tspan x="273" dy="0">Zend/PHP · Node/Asterisk</tspan>
+    <tspan x="273" dy="18">Laravel · Subway</tspan>
+  </text>
+</g>
+<g>
+  <line x1="595" y1="330" x2="595" y2="270" stroke="url(#brand)" stroke-width="2.5" stroke-opacity=".85"/>
+  <circle cx="595" cy="330" r="10" fill="#fffdf8" stroke="#f6535f" stroke-width="4">
+    <animate attributeName="r" values="8;13;8" dur="3.8s" begin="0.70s" repeatCount="indefinite"/>
+  </circle>
+  <text x="595" y="310" text-anchor="middle" fill="#f6535f" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="760">2019–22</text>
+  <rect x="490" y="135" width="210" height="135" rx="20" fill="#fffdf8" stroke="#171418" stroke-opacity=".08"/>
+  <text x="508" y="169" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="14" font-weight="720">
+    <tspan x="508" dy="0">Modernization</tspan>
+    <tspan x="508" dy="20">at scale</tspan>
+  </text>
+  <text x="508" y="226" fill="#625b5b" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="11.5">
+    <tspan x="508" dy="0">4M+ users · PHP → Node/TS</tspan>
+    <tspan x="508" dy="18">Vue/TS · team of 6</tspan>
+  </text>
+</g>
+<g>
+  <line x1="830" y1="330" x2="830" y2="385" stroke="url(#brand)" stroke-width="2.5" stroke-opacity=".85"/>
+  <circle cx="830" cy="330" r="10" fill="#fffdf8" stroke="#f6535f" stroke-width="4">
+    <animate attributeName="r" values="8;13;8" dur="3.8s" begin="1.05s" repeatCount="indefinite"/>
+  </circle>
+  <text x="830" y="360" text-anchor="middle" fill="#f6535f" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="760">2021–22</text>
+  <rect x="725" y="385" width="210" height="135" rx="20" fill="#fffdf8" stroke="#171418" stroke-opacity=".08"/>
+  <text x="743" y="419" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="14" font-weight="720">
+    <tspan x="743" dy="0">Health · marketplace</tspan>
+    <tspan x="743" dy="20">· finance</tspan>
+  </text>
+  <text x="743" y="476" fill="#625b5b" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="11.5">
+    <tspan x="743" dy="0">Clinicarx · TROC/Monest</tspan>
+    <tspan x="743" dy="18">Teros · Open Finance</tspan>
+  </text>
+</g>
+<g>
+  <line x1="1065" y1="330" x2="1065" y2="270" stroke="url(#brand)" stroke-width="2.5" stroke-opacity=".85"/>
+  <circle cx="1065" cy="330" r="10" fill="#fffdf8" stroke="#f6535f" stroke-width="4">
+    <animate attributeName="r" values="8;13;8" dur="3.8s" begin="1.40s" repeatCount="indefinite"/>
+  </circle>
+  <text x="1065" y="310" text-anchor="middle" fill="#f6535f" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="760">2024–26</text>
+  <rect x="960" y="135" width="210" height="135" rx="20" fill="#fffdf8" stroke="#171418" stroke-opacity=".08"/>
+  <text x="978" y="169" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="14" font-weight="720">
+    <tspan x="978" dy="0">Products + critical</tspan>
+    <tspan x="978" dy="20">operations</tspan>
+  </text>
+  <text x="978" y="226" fill="#625b5b" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="11.5">
+    <tspan x="978" dy="0">Sarah/BO · SISAP/NTT</tspan>
+    <tspan x="978" dy="18">ACSMTI products</tspan>
+  </text>
+</g>
+<text x="48" y="542" fill="#625b5b" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="12">details → docs/work-beyond-github.md</text>
 </svg>
