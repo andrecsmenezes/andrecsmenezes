@@ -92,6 +92,26 @@ The system had to keep operating while bugs, queries, coupling and new requireme
 
 **Used:** PHP 5.4/5.6 · MySQL 5 · SAP Business One
 
+
+## Internal / independent work that is not a public repository here
+
+### WhatsApp Service
+
+A Laravel/PHP service designed around asynchronous message ingestion, processing and response rather than a synchronous controller-to-provider flow.
+
+The architecture work includes PostgreSQL, Redis queues/Horizon, idempotency, an outbox, DLQ handling, state-machine rules, Filament/Livewire operations, metrics/SLO thinking and infrastructure automation.
+
+**Used / designed around:** Laravel · PHP · PostgreSQL · Redis · Horizon · Filament · Docker · Prometheus/Grafana · Terraform/Ansible
+
+### DPLMS
+
+An engineering agent/workflow for long codebase audits and refactoring loops.
+
+The interesting part is not "AI writes code". The goal is controlled repetition: find duplication, hardcoded decisions, missing i18n, UI-policy violations, architectural drift, security gaps or useless documentation; fix one class of problem; validate; keep going until the scan stops finding the same category of issue.
+
+I use it as an experiment in machine-readable engineering governance and in making long-running AI work more deterministic.
+
+
 ---
 
 The common thread is less about framework names and more about the kind of system: software that already has users, data, rules and operational risk. I usually prefer to understand what is really there, change it in pieces, add observability and tests around the risky paths, and keep a rollback path.
