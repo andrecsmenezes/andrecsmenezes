@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "updated_for": "2026-10",
+  "projects": [
+    {
+      "id": "captador-de-leads",
+      "name": "Captador de Leads",
+      "source_visibility": "private",
+      "category": "lead acquisition and operations platform",
+      "technologies": [
+        "FastAPI",
+        "Python",
+        "PostgreSQL/PostGIS",
+        "Node.js",
+        "Docker"
+      ],
+      "evidence": [
+        "adapter architecture",
+        "identity and provenance",
+        "human review gates",
+        "background workers",
+        "audit and observability"
+      ],
+      "case_study": "case-studies/captador-de-leads.md"
+    },
+    {
+      "id": "acsmti",
+      "name": "ACSMTI",
+      "source_visibility": "private",
+      "category": "digital experience and commercial platform",
+      "technologies": [
+        "Astro",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "GSAP",
+        "Vitest",
+        "Playwright"
+      ],
+      "evidence": [
+        "design system",
+        "architecture gates",
+        "responsive validation",
+        "CI/CD",
+        "multi-target deployment"
+      ],
+      "case_study": "case-studies/acsmti.md"
+    },
+    {
+      "id": "udp",
+      "name": "UDP Platform",
+      "source_visibility": "private",
+      "category": "multi-repository product ecosystem",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Go",
+        "OpenAPI",
+        "Docker"
+      ],
+      "evidence": [
+        "BFF boundary",
+        "contract-first APIs",
+        "owner services",
+        "containerized platform",
+        "cross-repository governance"
+      ],
+      "case_study": "case-studies/udp.md"
+    },
+    {
+      "id": "the-church-system",
+      "name": "The Church System",
+      "source_visibility": "private",
+      "category": "multi-tenant institutional platform",
+      "technologies": [
+        "PHP",
+        "Laravel",
+        "Filament",
+        "Flutter",
+        "Docker"
+      ],
+      "evidence": [
+        "bounded contexts",
+        "multi-tenancy",
+        "RBAC/ABAC",
+        "privacy architecture",
+        "ADRs",
+        "observability"
+      ],
+      "case_study": "case-studies/the-church-system.md"
+    }
+  ]
+}\n
