@@ -35,7 +35,7 @@ jobs:
 
       - name: Commit refreshed cards
         run: |
-          if git diff --quiet -- generated/; then
+          if [ -z "$(git status --porcelain -- generated/)" ]; then
             echo "No stats changes."
             exit 0
           fi
