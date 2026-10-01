@@ -18,9 +18,11 @@ Most of my work is not greenfield. There is usually code, data, users and someth
 
 I also do not believe much in architecture that only exists in a diagram. If a boundary matters, I want to see it in code, contracts, tests, CI or the way the system is operated.
 
-<p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/systems-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/systems-light.svg">
   <img src="./assets/systems-light.svg" alt="Animated view of product, API, data, workers, CI and delivery" width="100%">
-</p>
+</picture>
 
 ## What I'm building now
 
