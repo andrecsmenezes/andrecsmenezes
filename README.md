@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="./assets/acsmti-mark.svg" alt="ACSMTI" width="84" />
+</p>
+
+<p align="center">
   <img src="./assets/profile-header.svg" alt="André Menezes — Tech Lead, Software Engineering & Architecture" width="100%" />
 </p>
 
@@ -114,4 +118,4 @@ This repository includes a validation workflow that rejects common secret patter
 
 ---
 
-<sub>Profile repository maintained as an engineering portfolio. Case studies describe systems at a high level and intentionally omit proprietary source code, credentials, private endpoints, customer data and internal operational details.</sub>
+<sub>Profile repository maintained as an engineering portfolio. Case studies describe systems at a high level and intentionally omit proprietary source code, credentials, private endpoints, customer data and internal operational details. Visual language follows the <a href="./docs/visual-system.md">ACSMTI design system</a>.</sub>
