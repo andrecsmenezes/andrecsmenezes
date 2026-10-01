@@ -1,4 +1,5 @@
 name: Refresh branded activity card
+# Fetches the public contribution calendar, including anonymized private counts when GitHub exposes them.
 
 on:
   workflow_dispatch:
