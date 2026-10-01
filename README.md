@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/acsmti-mark.svg" alt="ACSMTI" width="84" />
+  <a href="https://acsmti.com"><img src="./assets/acsmti-mark.svg" alt="ACSMTI" width="84" /></a>
 </p>
 
 <p align="center">
