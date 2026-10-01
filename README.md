@@ -95,7 +95,9 @@ Laravel · Filament · Flutter · DDD · RBAC/ABAC · Docker
 
 ## Source strategy
 
-Current commercial systems remain private. This profile is deliberately curated around **engineering evidence instead of repository volume**. Public source is added when it represents the same quality bar as the case studies above.
+Current commercial systems remain private. This profile is deliberately curated around **engineering evidence instead of repository volume**.
+
+For direct source inspection, [`package-unifier`](https://github.com/andrecsmenezes/package-unifier) is kept public as a documented WordPress/Composer dependency-management experiment. Historical technical assessments remain available in the account but are intentionally not presented as current engineering work.
 
 ## Private source, public evidence
 
