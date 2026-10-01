@@ -1,0 +1,33 @@
+name: Refresh contribution animation
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "41 4 * * *"
+  push:
+    paths:
+      - ".github/workflows/contribution-snake.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate ACSMTI contribution animation
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          outputs: |
+            dist/contribution-snake-light.svg?color_snake=%239d1348&color_dots=%23fffdf8,%23ffd6c4,%23ff9a7c,%23ef4e68,%239d1348
+            dist/contribution-snake-dark.svg?color_snake=%23f68543&color_dots=%23171418,%23502732,%239d1348,%23ef1f63,%23f68543
+
+      - name: Publish animation branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: output
+          publish_dir: ./dist
+          force_orphan: true
