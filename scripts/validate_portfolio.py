@@ -1,1 +1,74 @@
-#!/usr/bin/env python3\nimport json\nimport re\nimport sys\nfrom pathlib import Path\n\nROOT = Path(__file__).resolve().parents[1]\nALLOWED_SUFFIXES = {".md", ".svg", ".json", ".py", ".yml", ".yaml"}\nFORBIDDEN_NAMES = {".env", ".npmrc", ".pypirc", "id_rsa", "id_ed25519"}\nFORBIDDEN_SUFFIXES = {".pem", ".key", ".p12", ".pfx", ".sqlite", ".sqlite3", ".db"}\n\nPATTERNS = {\n    "private key": re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),\n    "AWS access key": re.compile(r"AKIA[0-9A-Z]{16}"),\n    "GitHub token": re.compile(r"gh[pousr]_[A-Za-z0-9_]{20,}"),\n    "Slack token": re.compile(r"xox[baprs]-[A-Za-z0-9-]{10,}"),\n    "credential assignment": re.compile(r"(?i)(?:api[_-]?key|client[_-]?secret|access[_-]?token|password)\\s*[:=]\\s*['\"][^'\"]{8,}['\"]"),\n    "private IPv4 URL": re.compile(r"https?://(?:10\\.|192\\.168\\.|172\\.(?:1[6-9]|2[0-9]|3[01])\\.)"),\n}\n\ndef tracked_files():\n    for path in ROOT.rglob("*"):\n        if not path.is_file() or ".git" in path.parts:\n            continue\n        yield path\n\ndef fail(message):\n    print(f"::error::{message}")\n    return 1\n\ndef main():\n    errors = 0\n    for path in tracked_files():\n        rel = path.relative_to(ROOT)\n        if path.name in FORBIDDEN_NAMES or path.suffix.lower() in FORBIDDEN_SUFFIXES:\n            errors += fail(f"Forbidden sensitive file type/name: {rel}")\n            continue\n        if path.suffix.lower() not in ALLOWED_SUFFIXES:\n            errors += fail(f"Unexpected file type in public profile repository: {rel}")\n            continue\n        if path.stat().st_size > 1_500_000:\n            errors += fail(f"Unexpectedly large public portfolio file: {rel}")\n        try:\n            text = path.read_text(encoding="utf-8")\n        except UnicodeDecodeError:\n            errors += fail(f"Non-text file detected: {rel}")\n            continue\n        for label, pattern in PATTERNS.items():\n            if pattern.search(text):\n                errors += fail(f"Potential {label} detected in {rel}")\n\n    manifest_path = ROOT / "data" / "projects.json"\n    if manifest_path.exists():\n        data = json.loads(manifest_path.read_text(encoding="utf-8"))\n        if data.get("schema_version") != 1:\n            errors += fail("Unsupported projects manifest schema_version")\n        ids = set()\n        for project in data.get("projects", []):\n            pid = project.get("id")\n            if not pid or pid in ids:\n                errors += fail(f"Invalid or duplicate project id: {pid}")\n            ids.add(pid)\n            case = ROOT / project.get("case_study", "")\n            if not case.is_file():\n                errors += fail(f"Missing case study for {pid}: {case.relative_to(ROOT)}")\n\n    if errors:\n        print(f"Portfolio guard failed with {errors} issue(s).")\n        return 1\n    print("Portfolio guard passed.")\n    return 0\n\nif __name__ == "__main__":\n    sys.exit(main())\n
+#!/usr/bin/env python3
+import json
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+ALLOWED_SUFFIXES = {".md", ".svg", ".json", ".py", ".yml", ".yaml"}
+FORBIDDEN_NAMES = {".env", ".npmrc", ".pypirc", "id_rsa", "id_ed25519"}
+FORBIDDEN_SUFFIXES = {".pem", ".key", ".p12", ".pfx", ".sqlite", ".sqlite3", ".db"}
+
+PATTERNS = {
+    "private key": re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
+    "AWS access key": re.compile(r"AKIA[0-9A-Z]{16}"),
+    "GitHub token": re.compile(r"gh[pousr]_[A-Za-z0-9_]{20,}"),
+    "Slack token": re.compile(r"xox[baprs]-[A-Za-z0-9-]{10,}"),
+    "credential assignment": re.compile(r"(?i)(?:api[_-]?key|client[_-]?secret|access[_-]?token|password)\\s*[:=]\\s*['\"][^'\"]{8,}['\"]"),
+    "private IPv4 URL": re.compile(r"https?://(?:10\\.|192\\.168\\.|172\\.(?:1[6-9]|2[0-9]|3[01])\\.)"),
+}
+
+def tracked_files():
+    for path in ROOT.rglob("*"):
+        if not path.is_file() or ".git" in path.parts:
+            continue
+        yield path
+
+def fail(message):
+    print(f"::error::{message}")
+    return 1
+
+def main():
+    errors = 0
+    for path in tracked_files():
+        rel = path.relative_to(ROOT)
+        if path.name in FORBIDDEN_NAMES or path.suffix.lower() in FORBIDDEN_SUFFIXES:
+            errors += fail(f"Forbidden sensitive file type/name: {rel}")
+            continue
+        if path.suffix.lower() not in ALLOWED_SUFFIXES:
+            errors += fail(f"Unexpected file type in public profile repository: {rel}")
+            continue
+        if path.stat().st_size > 1_500_000:
+            errors += fail(f"Unexpectedly large public portfolio file: {rel}")
+        try:
+            text = path.read_text(encoding="utf-8")
+        except UnicodeDecodeError:
+            errors += fail(f"Non-text file detected: {rel}")
+            continue
+        for label, pattern in PATTERNS.items():
+            if pattern.search(text):
+                errors += fail(f"Potential {label} detected in {rel}")
+
+    manifest_path = ROOT / "data" / "projects.json"
+    if manifest_path.exists():
+        data = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if data.get("schema_version") != 1:
+            errors += fail("Unsupported projects manifest schema_version")
+        ids = set()
+        for project in data.get("projects", []):
+            pid = project.get("id")
+            if not pid or pid in ids:
+                errors += fail(f"Invalid or duplicate project id: {pid}")
+            ids.add(pid)
+            case = ROOT / project.get("case_study", "")
+            if not case.is_file():
+                errors += fail(f"Missing case study for {pid}: {case.relative_to(ROOT)}")
+
+    if errors:
+        print(f"Portfolio guard failed with {errors} issue(s).")
+        return 1
+    print("Portfolio guard passed.")
+    return 0
+
+if __name__ == "__main__":
+    sys.exit(main())
