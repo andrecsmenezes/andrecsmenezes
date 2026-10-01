@@ -96,13 +96,11 @@ Tenancy, authorization, privacy and day-to-day operations across backoffice, web
 
 ## GitHub, in motion
 
-<p align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./generated/stats-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./generated/stats-light.svg">
-  <img src="./generated/stats-light.svg" alt="GitHub activity summary" width="72%">
+  <source media="(prefers-color-scheme: dark)" srcset="./generated/activity-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./generated/activity-light.svg">
+  <img src="./generated/activity-light.svg" alt="GitHub contribution metrics for the last 12 months" width="100%">
 </picture>
-</p>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/andrecsmenezes/andrecsmenezes/output/contribution-snake-dark.svg">
@@ -110,7 +108,7 @@ Tenancy, authorization, privacy and day-to-day operations across backoffice, web
   <img src="https://raw.githubusercontent.com/andrecsmenezes/andrecsmenezes/output/contribution-snake-light.svg" alt="Animated GitHub contribution graph" width="100%">
 </picture>
 
-The cards and contribution animation refresh automatically with GitHub Actions.
+Both are rebuilt every day from GitHub activity. Private contribution counts can appear here when GitHub exposes them publicly; repository names and private details do not.
 
 ## Code you can open
 
@@ -128,6 +126,6 @@ Private code stays private. The case studies only expose material I have deliber
 
 <p align="center">
   <a href="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/portfolio-guard.yml"><img src="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/portfolio-guard.yml/badge.svg" alt="Portfolio Guard"></a>
-  <a href="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/profile-stats.yml"><img src="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/profile-stats.yml/badge.svg" alt="Profile stats"></a>
+  <a href="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/activity-card.yml"><img src="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/activity-card.yml/badge.svg" alt="Activity metrics"></a>
   <a href="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/contribution-snake.yml"><img src="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/contribution-snake.yml/badge.svg" alt="Contribution animation"></a>
 </p>
