@@ -1,123 +1,133 @@
-<p align="center">
-  <a href="https://acsmti.com"><img src="./assets/acsmti-mark.svg" alt="ACSMTI" width="84" /></a>
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.svg">
+  <img src="./assets/hero-light.svg" alt="André Menezes — Tech Lead and Software Engineer" width="100%">
+</picture>
 
 <p align="center">
-  <img src="./assets/profile-header.svg" alt="André Menezes — Tech Lead, Software Engineering & Architecture" width="100%" />
+  <a href="https://acsmti.com">acsmti.com</a>
+  &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/andrecsmenezes">LinkedIn</a>
+  &nbsp;·&nbsp;
+  <a href="mailto:andre.cs.menezes@gmail.com">Email</a>
 </p>
 
-<p align="center">
-  <strong>Tech Lead · Software Engineering · Architecture · Product Engineering</strong><br/>
-  Building production-oriented platforms, automation systems and digital products.
-</p>
+### Hi, I'm André.
 
-<p align="center">
-  <a href="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/portfolio-guard.yml"><img src="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/portfolio-guard.yml/badge.svg" alt="Portfolio Guard"/></a>
-</p>
+I build software products and the systems behind them.
 
-<p align="center">
-  <code>TypeScript</code> · <code>React</code> · <code>Node.js</code> · <code>Go</code> · <code>Python</code> · <code>PHP</code> · <code>Docker</code> · <code>PostgreSQL</code>
-</p>
+I like work that starts messy: an old system, a manual process, a product that grew faster than its architecture. My job is to make it easier to understand, safer to change and simpler to ship.
 
----
+Most of what I'm building right now is private. The source stays private; the engineering doesn't have to. I publish the decisions, diagrams, tests and trade-offs I can share without exposing the product.
 
-## Selected engineering work
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/now-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/now-light.svg">
+  <img src="./assets/now-light.svg" alt="Current projects" width="100%">
+</picture>
 
-The production source for the systems below is private. The case studies expose the part that matters for technical evaluation: **architecture, constraints, engineering decisions, quality strategy and trade-offs — without publishing proprietary code or sensitive operational details.**
+## What I'm building
 
 <table>
 <tr>
 <td width="50%" valign="top">
-<a href="./case-studies/captador-de-leads.md"><img src="./assets/captador.svg" width="100%" alt="Captador de Leads"/></a>
+<a href="./case-studies/captador-de-leads.md">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/captador-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/captador-light.svg">
+  <img src="./assets/captador-light.svg" alt="Captador de Leads" width="100%">
+</picture>
+</a>
 
-**Lead acquisition & operations platform**
+Acquisition, identity, research, campaigns, approval and outreach in one operational flow.
 
-Local-first platform for multi-source acquisition, identity resolution, campaign operations, research, human review and omnichannel engagement.
-
-FastAPI · PostgreSQL/PostGIS · Workers · Docker · Adapters
-
-→ [Engineering case study](./case-studies/captador-de-leads.md)
+**[Open the case study →](./case-studies/captador-de-leads.md)**
 </td>
 <td width="50%" valign="top">
-<a href="./case-studies/acsmti.md"><img src="./assets/acsmti.svg" width="100%" alt="ACSMTI"/></a>
+<a href="./case-studies/acsmti.md">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/acsmti-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/acsmti-light.svg">
+  <img src="./assets/acsmti-light.svg" alt="ACSMTI" width="100%">
+</picture>
+</a>
 
-**Digital experience & commercial platform**
+A motion-heavy commercial site without turning the frontend into a pile of one-off CSS.
 
-Componentized frontend architecture with design tokens, controlled motion, architectural gates, automated tests and deployment targets for staging and static hosting.
-
-Astro · React · TypeScript · Tailwind · GSAP · Playwright
-
-→ [Engineering case study](./case-studies/acsmti.md)
+**[Open the case study →](./case-studies/acsmti.md)**
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
-<a href="./case-studies/udp.md"><img src="./assets/udp.svg" width="100%" alt="UDP Platform"/></a>
+<a href="./case-studies/udp.md">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/udp-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/udp-light.svg">
+  <img src="./assets/udp-light.svg" alt="UDP" width="100%">
+</picture>
+</a>
 
-**Multi-repository product ecosystem**
+Several runtimes and repositories kept together by contracts, ownership and a Docker-first platform.
 
-Contract-driven platform combining web, BFF, owner services, microservices and mobile surfaces behind a Docker-first development environment.
-
-React · TypeScript · Go · OpenAPI · Docker · Mobile
-
-→ [Engineering case study](./case-studies/udp.md)
+**[Open the case study →](./case-studies/udp.md)**
 </td>
 <td width="50%" valign="top">
-<a href="./case-studies/the-church-system.md"><img src="./assets/thechurchsys.svg" width="100%" alt="The Church System"/></a>
+<a href="./case-studies/the-church-system.md">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/thechurchsys-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/thechurchsys-light.svg">
+  <img src="./assets/thechurchsys-light.svg" alt="The Church System" width="100%">
+</picture>
+</a>
 
-**Multi-tenant institutional platform**
+Tenancy, authorization, privacy and day-to-day operations across backoffice, web and mobile.
 
-Modular system designed around bounded contexts, authorization, privacy, observability and cross-platform consistency across backoffice, web and mobile.
-
-Laravel · Filament · Flutter · DDD · RBAC/ABAC · Docker
-
-→ [Engineering case study](./case-studies/the-church-system.md)
+**[Open the case study →](./case-studies/the-church-system.md)**
 </td>
 </tr>
 </table>
 
----
+## A few rules I work by
 
-## Engineering focus
+- **If a boundary matters, name it.** Hidden architecture eventually becomes expensive architecture.
+- **If a rule matters, put it in CI.** A convention nobody checks is just a suggestion.
+- **Automate repetition, not accountability.** Critical decisions should still have an owner.
+- **Docs have to survive the next release.** Otherwise they are decoration.
 
-<table>
-<tr>
-<td valign="top"><strong>Architecture</strong><br/><br/>Bounded contexts, modularity, explicit contracts, event-oriented workflows, adapter boundaries and deliberate trade-offs.</td>
-<td valign="top"><strong>Reliability</strong><br/><br/>Automated validation, test strategy, idempotency, observability, recovery paths and operational guardrails.</td>
-<td valign="top"><strong>Product engineering</strong><br/><br/>Architecture connected to user journeys, delivery constraints, maintainability and measurable product outcomes.</td>
-</tr>
-<tr>
-<td valign="top"><strong>Platform</strong><br/><br/>Docker-first environments, CI/CD gates, versioning, release discipline and reproducible development workflows.</td>
-<td valign="top"><strong>Security & privacy</strong><br/><br/>Least exposure, explicit authorization, data boundaries, secret hygiene and privacy-aware design.</td>
-<td valign="top"><strong>AI-assisted engineering</strong><br/><br/>Structured specifications, durable project context, validation loops and machine-readable engineering governance.</td>
-</tr>
-</table>
+## GitHub, in motion
 
-## Source strategy
+<p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./generated/stats-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./generated/stats-light.svg">
+  <img src="./generated/stats-light.svg" alt="GitHub activity summary" width="72%">
+</picture>
+</p>
 
-Current commercial systems remain private. This profile is deliberately curated around **engineering evidence instead of repository volume**.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/andrecsmenezes/andrecsmenezes/output/contribution-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/andrecsmenezes/andrecsmenezes/output/contribution-snake-light.svg">
+  <img src="https://raw.githubusercontent.com/andrecsmenezes/andrecsmenezes/output/contribution-snake-light.svg" alt="Animated GitHub contribution graph" width="100%">
+</picture>
 
-For direct source inspection, [`package-unifier`](https://github.com/andrecsmenezes/package-unifier) is kept public as a documented WordPress/Composer dependency-management experiment. Historical technical assessments remain available in the account but are intentionally not presented as current engineering work.
+The cards and contribution animation refresh automatically with GitHub Actions.
 
-## Private source, public evidence
+## Code you can open
 
-Commercial and sensitive repositories remain private by design. Public case studies are generated from a strict disclosure boundary:
+### [package-unifier](https://github.com/andrecsmenezes/package-unifier)
 
-    private source
-          │
-          ▼
-    explicit public portfolio material
-          │
-          ▼
-    secret / sensitive-pattern validation
-          │
-          ▼
-    public engineering case study
+A WordPress/Composer dependency-management experiment. It is public on purpose: the README explains both the idea **and where the current implementation falls short**.
 
-This repository includes a validation workflow that rejects common secret patterns before portfolio material is merged.
+## About the private repos
 
-→ [Disclosure model](./docs/private-to-public.md)
+Private code stays private. The case studies only expose material I have deliberately chosen to make public, and this profile has a CI guard for common secret patterns, unexpected file types and broken local references.
+
+[How the disclosure boundary works →](./docs/private-to-public.md)
 
 ---
 
-<sub>Profile repository maintained as an engineering portfolio. Case studies describe systems at a high level and intentionally omit proprietary source code, credentials, private endpoints, customer data and internal operational details. Visual language follows the <a href="./docs/visual-system.md">ACSMTI design system</a>.</sub>
+<p align="center">
+  <a href="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/portfolio-guard.yml"><img src="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/portfolio-guard.yml/badge.svg" alt="Portfolio Guard"></a>
+  <a href="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/profile-stats.yml"><img src="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/profile-stats.yml/badge.svg" alt="Profile stats"></a>
+  <a href="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/contribution-snake.yml"><img src="https://github.com/andrecsmenezes/andrecsmenezes/actions/workflows/contribution-snake.yml/badge.svg" alt="Contribution animation"></a>
+</p>
