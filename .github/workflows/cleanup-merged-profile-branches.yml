@@ -1,0 +1,71 @@
+name: Cleanup merged profile branches
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: profile-safe-merged-branch-cleanup
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Delete exact merged PR heads only
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const fullName = owner + '/' + repo;
+            const branches = await github.paginate(github.rest.repos.listBranches, {
+              owner, repo, per_page: 100
+            });
+            const pullRequests = await github.paginate(github.rest.pulls.list, {
+              owner, repo, state: 'all', per_page: 100
+            });
+
+            const sameRepository = (pr) => pr.head.repo?.full_name === fullName;
+            const removed = [];
+            const kept = [];
+
+            for (const branch of branches) {
+              const name = branch.name;
+              if (name === 'main' || name === 'output' || branch.protected ||
+                  /^(archive|dependabot)\//.test(name)) {
+                kept.push(name);
+                continue;
+              }
+
+              const active = pullRequests.some((pr) =>
+                pr.state === 'open' && sameRepository(pr) && pr.head.ref === name
+              );
+              const exactMerge = pullRequests.some((pr) =>
+                pr.state === 'closed' && pr.merged_at && sameRepository(pr) &&
+                pr.base.ref === 'main' && pr.head.ref === name &&
+                pr.head.sha === branch.commit.sha
+              );
+
+              if (active || !exactMerge) {
+                kept.push(name);
+                continue;
+              }
+
+              await github.rest.git.deleteRef({ owner, repo, ref: 'heads/' + name });
+              try {
+                await github.rest.repos.getBranch({ owner, repo, branch: name });
+                throw new Error('Branch still exists after deletion: ' + name);
+              } catch (error) {
+                if (error.status !== 404) throw error;
+              }
+              removed.push(name);
+            }
+
+            core.info('removed=' + JSON.stringify(removed));
+            core.info('preserved=' + JSON.stringify(kept));
