@@ -43,13 +43,15 @@ Privacy, consent, retention and sensitive workflows are architecture topics in t
 
 When a decision has a real trade-off, I want the next person to know why it was made before replacing it.
 
-### The test suite is intentionally large
+### Validation follows the current architecture
 
-The backend currently documents more than 5,500 PHPUnit test methods across more than 900 test files, with smaller smoke suites for the critical path. The point is not the number by itself; it is keeping a broad system changeable.
+The v2 repository uses backend, web, architecture, security and OpenSpec CI gates. A merged commit is not evidence that pending or failed checks passed. The earlier standalone backend's test inventory is historical, not a current v2 test-count claim.
 
 ## Stack
 
-PHP · Laravel · Filament · Blade/Livewire · Flutter · Docker · DDD · RBAC/ABAC · multi-tenancy
+PHP · Laravel · PostgreSQL · Redis · Svelte / SvelteKit · TypeScript · Docker · DDD · RBAC/ABAC · multi-tenancy
+
+Flutter belongs to the planned mobile domain; Filament and Blade/Livewire belong to the superseded legacy implementation, not the active v2 stack.
 
 ---
 
