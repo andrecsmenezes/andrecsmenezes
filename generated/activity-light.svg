@@ -8,13 +8,13 @@
 <text x="48" y="86" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="24" font-weight="720">Work you can see. Private repository names stay private.</text>
 <rect x="48" y="112" width="250" height="88" rx="20" fill="#fffdf8" stroke="#171418" stroke-opacity=".08"/>
 <text x="68" y="143" fill="#625b5b" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" font-weight="650" letter-spacing="1.25">CONTRIBUTIONS</text>
-<text x="68" y="181" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="29" font-weight="760">5,599</text>
+<text x="68" y="181" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="29" font-weight="760">5,706</text>
 <rect x="330" y="112" width="250" height="88" rx="20" fill="#fffdf8" stroke="#171418" stroke-opacity=".08"/>
 <text x="350" y="143" fill="#625b5b" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" font-weight="650" letter-spacing="1.25">ACTIVE DAYS</text>
-<text x="350" y="181" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="29" font-weight="760">93</text>
+<text x="350" y="181" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="29" font-weight="760">95</text>
 <rect x="612" y="112" width="250" height="88" rx="20" fill="#fffdf8" stroke="#171418" stroke-opacity=".08"/>
 <text x="632" y="143" fill="#625b5b" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" font-weight="650" letter-spacing="1.25">LONGEST STREAK</text>
-<text x="632" y="181" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="29" font-weight="760">14 days</text>
+<text x="632" y="181" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="29" font-weight="760">16 days</text>
 <rect x="894" y="112" width="250" height="88" rx="20" fill="#fffdf8" stroke="#171418" stroke-opacity=".08"/>
 <text x="914" y="143" fill="#625b5b" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" font-weight="650" letter-spacing="1.25">BUSIEST DAY</text>
 <text x="914" y="181" fill="#171418" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="29" font-weight="760">835</text>
@@ -63,12 +63,12 @@
 <rect x="930" y="264" width="17" height="0" rx="4" fill="url(#brand)" opacity="0.22"><animate attributeName="y" from="264" to="261" dur=".7s" begin="0.504s" fill="freeze"/><animate attributeName="height" from="0" to="3" dur=".7s" begin="0.504s" fill="freeze"/></rect>
 <rect x="951" y="264" width="17" height="0" rx="4" fill="url(#brand)" opacity="0.22"><animate attributeName="y" from="264" to="261" dur=".7s" begin="0.516s" fill="freeze"/><animate attributeName="height" from="0" to="3" dur=".7s" begin="0.516s" fill="freeze"/></rect>
 <rect x="972" y="264" width="17" height="0" rx="4" fill="url(#brand)" opacity="0.22"><animate attributeName="y" from="264" to="261" dur=".7s" begin="0.528s" fill="freeze"/><animate attributeName="height" from="0" to="3" dur=".7s" begin="0.528s" fill="freeze"/></rect>
-<rect x="993" y="264" width="17" height="0" rx="4" fill="url(#brand)" opacity="0.49"><animate attributeName="y" from="264" to="250" dur=".7s" begin="0.540s" fill="freeze"/><animate attributeName="height" from="0" to="14" dur=".7s" begin="0.540s" fill="freeze"/></rect>
+<rect x="993" y="264" width="17" height="0" rx="4" fill="url(#brand)" opacity="0.47"><animate attributeName="y" from="264" to="250" dur=".7s" begin="0.540s" fill="freeze"/><animate attributeName="height" from="0" to="14" dur=".7s" begin="0.540s" fill="freeze"/></rect>
 <rect x="1014" y="264" width="17" height="0" rx="4" fill="url(#brand)" opacity="0.26"><animate attributeName="y" from="264" to="261" dur=".7s" begin="0.552s" fill="freeze"/><animate attributeName="height" from="0" to="3" dur=".7s" begin="0.552s" fill="freeze"/></rect>
-<rect x="1035" y="264" width="17" height="0" rx="4" fill="url(#brand)" opacity="0.30"><animate attributeName="y" from="264" to="260" dur=".7s" begin="0.564s" fill="freeze"/><animate attributeName="height" from="0" to="4" dur=".7s" begin="0.564s" fill="freeze"/></rect>
-<rect x="1056" y="264" width="17" height="0" rx="4" fill="url(#brand)" opacity="0.31"><animate attributeName="y" from="264" to="259" dur=".7s" begin="0.576s" fill="freeze"/><animate attributeName="height" from="0" to="5" dur=".7s" begin="0.576s" fill="freeze"/></rect>
+<rect x="1035" y="264" width="17" height="0" rx="4" fill="url(#brand)" opacity="0.29"><animate attributeName="y" from="264" to="260" dur=".7s" begin="0.564s" fill="freeze"/><animate attributeName="height" from="0" to="4" dur=".7s" begin="0.564s" fill="freeze"/></rect>
+<rect x="1056" y="264" width="17" height="0" rx="4" fill="url(#brand)" opacity="0.30"><animate attributeName="y" from="264" to="260" dur=".7s" begin="0.576s" fill="freeze"/><animate attributeName="height" from="0" to="4" dur=".7s" begin="0.576s" fill="freeze"/></rect>
 <rect x="1077" y="264" width="17" height="0" rx="4" fill="url(#brand)" opacity="0.30"><animate attributeName="y" from="264" to="260" dur=".7s" begin="0.588s" fill="freeze"/><animate attributeName="height" from="0" to="4" dur=".7s" begin="0.588s" fill="freeze"/></rect>
-<rect x="1098" y="264" width="17" height="0" rx="4" fill="url(#brand)" opacity="0.84"><animate attributeName="y" from="264" to="231" dur=".7s" begin="0.600s" fill="freeze"/><animate attributeName="height" from="0" to="33" dur=".7s" begin="0.600s" fill="freeze"/></rect>
+<rect x="1098" y="264" width="17" height="0" rx="4" fill="url(#brand)" opacity="0.81"><animate attributeName="y" from="264" to="232" dur=".7s" begin="0.600s" fill="freeze"/><animate attributeName="height" from="0" to="32" dur=".7s" begin="0.600s" fill="freeze"/></rect>
 <rect x="1119" y="264" width="17" height="0" rx="4" fill="url(#brand)" opacity="1.00"><animate attributeName="y" from="264" to="222" dur=".7s" begin="0.612s" fill="freeze"/><animate attributeName="height" from="0" to="42" dur=".7s" begin="0.612s" fill="freeze"/></rect>
 <text x="1148" y="281" text-anchor="end" fill="#625b5b" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="11">updated automatically</text>
 </svg>
