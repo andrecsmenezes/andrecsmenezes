@@ -18,12 +18,41 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Delete exact merged PR heads only
+      - name: Delete only registered exact merged PR heads
         uses: actions/github-script@v8
         with:
           script: |
             const { owner, repo } = context.repo;
             const fullName = owner + '/' + repo;
+            const path = 'orchestration/branch-deletion-register.json';
+            // Fetch authorization at this workflow's exact main commit; missing or malformed policy denies all deletions.
+            const { data: file } = await github.rest.repos.getContent({
+              owner, repo, path, ref: context.sha
+            });
+            if (Array.isArray(file) || file.type !== 'file' ||
+                file.encoding !== 'base64' || typeof file.content !== 'string') {
+              throw new Error('No verified branch deletion register at the workflow commit');
+            }
+            const register = JSON.parse(Buffer.from(file.content, 'base64').toString('utf8'));
+            if (register.version !== 1 || register.owner !== fullName ||
+                !Array.isArray(register.deletion_intents)) {
+              throw new Error('Invalid registered deletion policy');
+            }
+            const eligible = new Set();
+            const unitIds = new Set();
+            for (const entry of register.deletion_intents) {
+              if (!entry || typeof entry.branch !== 'string' ||
+                  typeof entry.work_unit_id !== 'string' || !entry.work_unit_id.trim() ||
+                  entry.disposition !== 'DELETE_AFTER_VERIFIED_MAIN_MERGE' ||
+                  !/^(?:ci|docs|fix|chore|test|feat|refactor)\/[A-Za-z0-9._/-]+$/.test(entry.branch) ||
+                  entry.branch.includes('..') || eligible.has(entry.branch) ||
+                  unitIds.has(entry.work_unit_id)) {
+                throw new Error('Malformed or duplicated branch deletion intent');
+              }
+              eligible.add(entry.branch);
+              unitIds.add(entry.work_unit_id);
+            }
+
             const branches = await github.paginate(github.rest.repos.listBranches, {
               owner, repo, per_page: 100
             });
@@ -38,7 +67,7 @@ jobs:
             for (const branch of branches) {
               const name = branch.name;
               if (name === 'main' || name === 'output' || branch.protected ||
-                  /^(archive|dependabot)\//.test(name)) {
+                  /^(archive|dependabot)\//.test(name) || !eligible.has(name)) {
                 kept.push(name);
                 continue;
               }
@@ -53,6 +82,22 @@ jobs:
               );
 
               if (active || !exactMerge) {
+                kept.push(name);
+                continue;
+              }
+
+              // Ref may move after the inventory snapshot; fail closed on changed or missing refs.
+              let live;
+              try {
+                live = await github.rest.repos.getBranch({ owner, repo, branch: name });
+              } catch (error) {
+                if (error.status === 404) {
+                  kept.push(name);
+                  continue;
+                }
+                throw error;
+              }
+              if (live.data.commit.sha !== branch.commit.sha) {
                 kept.push(name);
                 continue;
               }

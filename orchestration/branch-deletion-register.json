@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "owner": "andrecsmenezes/andrecsmenezes",
+  "deletion_intents": [
+    {
+      "branch": "fix/profile-registered-branch-guard-20261027-0955",
+      "work_unit_id": "PROFILE-P0-REGISTERED-CLEANUP-20261027-0955",
+      "disposition": "DELETE_AFTER_VERIFIED_MAIN_MERGE",
+      "reason": "Only delete this exact merged PR head after validated CI/security, confirmed main inclusion, no open PR and unchanged remote branch SHA",
+      "registered_date": "2026-10-27"
+    }
+  ]
+}
