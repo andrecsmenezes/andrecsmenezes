@@ -1,0 +1,20 @@
+schema: spec-driven
+context: |
+  Repo: public GitHub engineering profile; not a runtime product or private code mirror.
+  Canonical public disclosure boundary: docs/private-to-public.md.
+  Canonical public inventory: data/projects.json; validation: scripts/validate_portfolio.py.
+  Technical specs and AI agent instructions: English-only, machine-oriented, minimal.
+  Never expose credentials, private application code, private network endpoints or customer data.
+  Public-facing locale preference for future UI: pt-BR > en > es.
+  No dependency manifests or production deployment in this repository.
+  Unverified behavior, parser results and published changes must not be represented as PASS.
+rules:
+  proposal:
+    - Cite public tracked sources; reject private artifacts and source mirrors.
+    - Prefer updating canonical files over duplicate documentation.
+  specs:
+    - Use observable SHALL requirements and testable scenarios.
+    - Describe intended security boundaries, not claims of runtime certification.
+  tasks:
+    - Require public disclosure scan, official parser and branch cleanup evidence before main integration.
+    - Do not publish generated Codex integration or secrets.
