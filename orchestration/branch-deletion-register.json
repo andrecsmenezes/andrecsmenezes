@@ -8,6 +8,14 @@
       "disposition": "DELETE_AFTER_VERIFIED_MAIN_MERGE",
       "reason": "Only delete this exact merged PR head after validated CI/security, confirmed main inclusion, no open PR and unchanged remote branch SHA",
       "registered_date": "2026-10-27"
+    },
+    {
+      "branch": "docs/profile-official-openspec-20261028-c9k4",
+      "work_unit_id": "PROFILE-P0-OPENSPEC-OFFICIAL-20261028-C9K4",
+      "disposition": "DELETE_AFTER_VERIFIED_MAIN_MERGE",
+      "reason": "Delete only after exact-head public disclosure guard, official OpenSpec and independent security evidence pass, verified main merge, no open PR, and unchanged live branch-ref lease.",
+      "registered_date": "2026-10-28",
+      "preaction_decision": "DEC-PROFILE-P0-OPENSPEC-C9K4-003"
     }
   ]
 }
