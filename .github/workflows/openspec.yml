@@ -1,0 +1,42 @@
+name: OpenSpec official validation
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  framework:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OPENSPEC_TELEMETRY: "0"
+    steps:
+      - name: Checkout public sources
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned official OpenSpec
+        run: npm install --global @fission-ai/openspec@1.13.1 --no-audit --no-fund
+      - name: Initialize official Codex integration
+        run: openspec init --tools codex
+      - name: Verify real tool integration
+        run: test -f .agents/skills/openspec-apply-change/SKILL.md
+      - name: Verify required AI audit owners
+        shell: bash
+        run: |
+          for agent in CODE_DEDUP_AGENT CLEAN_CODE_AGENT ARCHITECTURE_AGENT I18N_AGENT; do
+            test -f "openspec/project/agents/${agent}.md"
+          done
+      - name: Inspect official framework
+        run: openspec list --json
+      - name: Validate canonical specs and changes
+        run: openspec validate --all --strict --no-interactive
